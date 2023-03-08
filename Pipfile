@@ -4,14 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pandas = "*"
-duckdb = "*"
 requests = "*"
 urllib3 = "*"
-numpy = "*"
+pandas = "*"
+duckdb = "*"
 streamlit = "*"
-plotly = "*"
 datetime = "*"
+plotly = "*"
 python-dotenv = "*"
 
 [dev-packages]

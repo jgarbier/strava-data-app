@@ -34,12 +34,13 @@ payload = {
     'f': 'json'
 }
 res = requests.post(auth_url, data=payload, verify=False)
+
 access_token = res.json()['access_token']
 header = {'Authorization': 'Bearer ' + access_token}
 
 # initialize pagination start and all activities list
 
-@st.cache(show_spinner=False)
+@st.cache_data(show_spinner=False)
 def get_strava_data():
     request_page_num = 1
     all_activities = []
@@ -165,7 +166,7 @@ def main():
     
     # page configs
     st.set_page_config(
-        page_title="Strava Metrics App",
+        page_title="[Strava Metrics App](https://github.com/jgarbier/strava-data-app)",
     )
     st.header('Strava Metrics App')
     st.caption('Created by [James Garbier](https://github.com/jgarbier)')
