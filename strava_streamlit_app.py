@@ -168,7 +168,7 @@ def main():
         page_title="Strava Metrics App",
     )
     st.header('Strava Metrics App')
-    st.caption('Created by James Garbier')
+    st.caption('Created by [James Garbier](https://github.com/jgarbier)')
     
     how_to_string = f"""
         1. Pick your `Metric`
