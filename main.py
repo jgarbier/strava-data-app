@@ -22,14 +22,14 @@ activites_url = "https://www.strava.com/api/v3/athlete/activities"
 # if the app is being run on streamlit prod, use streamlit cloud encrypted secrets
 # else, the app is being run locally on dev, use secrets from the secrets.toml file
 
-CLIENT_ID = st.secrets["CLIENT_ID"]
-CLIENT_SECRET = st.secrets["CLIENT_SECRET"]
-REFRESH_TOKEN = st.secrets["REFRESH_TOKEN"]
+client_id = st.secrets.strava_api_secrets.client_id
+client_secret = st.secrets.strava_api_secrets.client_secret
+refresh_token = st.secrets.strava_api_secrets.refresh_token
 
 payload = {
-    'client_id': CLIENT_ID,
-    'client_secret': CLIENT_SECRET,
-    'refresh_token': REFRESH_TOKEN,
+    'client_id': client_id,
+    'client_secret': client_secret,
+    'refresh_token': refresh_token,
     'grant_type': "refresh_token",
     'f': 'json'
 }
