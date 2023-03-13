@@ -25,11 +25,11 @@ This app connects to [Strava's API](https://developers.strava.com/) to analyze m
   ```bash
   pipenv shell
   ```
-3. Create a `.env` file with API credentials
+3. Create a `.streamlit` file with API credentials
   ```
-  CLIENT_ID = {your_client_id}
-  CLIENT_SECRET = '{your_secret_key}'
-  REFRESH_TOKEN = '{your_refresh_token}'
+  client_id = {your_client_id}
+  client_secret = '{your_secret_key}'
+  refresh_token = '{your_refresh_token}'
   ```
   - [Instructions](https://developers.strava.com/docs/getting-started/) on how to retrieve API credentials
 4. Run the streamlit app
