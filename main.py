@@ -11,20 +11,20 @@ import streamlit as st
 from datetime import date, datetime
 import plotly.express as px
 import plotly.graph_objects as go
-from dotenv import load_dotenv
-import os
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# load the hidden env variables for api key
-load_dotenv()
-# retrieving strava data
+# set api endpoint variables
 auth_url = "https://www.strava.com/oauth/token"
 activites_url = "https://www.strava.com/api/v3/athlete/activities"
 
-CLIENT_ID = os.getenv("CLIENT_ID")
-CLIENT_SECRET = os.getenv("CLIENT_SECRET")
-REFRESH_TOKEN = os.getenv("REFRESH_TOKEN")
+# retrieve api secrets
+# if the app is being run on streamlit prod, use streamlit cloud encrypted secrets
+# else, the app is being run locally on dev, use secrets from the secrets.toml file
+
+CLIENT_ID = st.secrets["CLIENT_ID"]
+CLIENT_SECRET = st.secrets["CLIENT_SECRET"]
+REFRESH_TOKEN = st.secrets["REFRESH_TOKEN"]
 
 payload = {
     'client_id': CLIENT_ID,
